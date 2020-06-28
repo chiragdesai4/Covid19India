@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Covid 19 India</string>
+
+    <!-- Common Strings -->
+    <string name="header_test">Covid-19 India</string>
+    <string name="something_went_wrong">Oh no, something went wrong!</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="loading">Loading…</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="share_via">Share Via</string>
+    <string name="failed_to_connect_with_server">Failed to connect with server!</string>
+    <string name="no_internet_connection">No internet connection!</string>
+    <string name="retry">Retry</string>
+    <string name="no_valid_url_available">No valid URL available</string>
+
+
+    <!-- Home Activity -->
+    <string name="string_recovered">Recovered</string>
+    <string name="string_deaths">Deaths</string>
+    <string name="string_tested">Tested</string>
+    <string name="string_confirmed">Confirmed</string>
+    <string name="string_active">Active</string>
+
+    <!-- Bottom Navigation Bar -->
+    <string name="string_dashboard">Dashboard</string>
+    <string name="string_states">States</string>
+    <string name="string_about">About</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- State List -->
+    <string name="string_tested_short">Tested</string>
+    <string name="string_search_state">Search state by name</string>
+
+
+    <!-- About Page -->
+    <string name="overview">Overview</string>
+    <string name="overview_content">Coronavirus disease (COVID–19) is an infectious disease caused by the virus strain severe acute respiratory syndrome coronavirus 2 (SARS–CoV–2). Worldwide spread of the disease began for the first time in 2019 and has developed into the 2019–20 coronavirus pandemic.</string>
+    <string name="string_symptomps">Symptoms</string>
+    <string name="string_symptoms_content">People may be sick with the virus for 1 to 14 days before developing symptoms. The most common symptoms of coronavirus disease (COVID-19) are fever, tiredness, and dry cough. Most people (about 80%) recover from the disease without needing special treatment.
+        \n\nMore rarely, the disease can be serious and even fatal. Older people, and people with other medical conditions (such as asthma, diabetes, or heart disease), maybe more vulnerable to becoming severely ill.</string>
+    <string name="string_prevention">Preventions</string>
+    <string name="data_provider">Coronavirus Data Provider</string>
+    <string name="data_provider_content_1">The corona virus data is provided by <a href="https://api.covid19india.org">https://api.covid19india.org</a></string>
+    <string name="safety_measures">Safety Measures</string>
+    <string name="safety_measures_content">For more information on safety measures and symptoms, please check <a href="http://who.int">http://who.int</a></string>
+    <string name="no_counts_found">Counting under progress.</string>
+    <string name="sting_updates">Updates</string>
+    <string name="no_updates_for_today">No updates for today yet.</string>
+    <string name="view_all_updates">View All</string>
+    <string name="string_andhra_pradesh">Andhra Pradesh</string>
+    <string name="string_arunachal_pradesh">Arunachal Pradesh</string>
+    <string name="string_assam">Assam</string>
+    <string name="string_bihar">Bihar</string>
+    <string name="string_andaman">Andaman</string>
+    <string name="string_delhi">Delhi</string>
+    <string name="string_chhattisgarh">Chhattisgarh</string>
+    <string name="string_diu_daman">Diu Daman</string>
+
+</resources>

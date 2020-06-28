@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#393C3A</color>
+    <color name="colorPrimaryDark">#CC5967</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#393C3A</color>
+
+    <color name="greySecondary">#B5B5B5</color>
+    <color name="greyPrimary">#95989A</color>
+    <color name="greyDark">#4c4c4c</color>
+    <color name="greyBg">#f2f2f2</color>
+    <color name="sky">#00d8ff</color>
+    <!--<color name="orange">#ff4700</color>-->
+    <color name="blueGrey">#3a6a75</color>
+    <color name="red">#FF0000</color>
+
+    <!--<color name="lightOrange">#ff6200</color>-->
+    <color name="lightRed">#FFD9D9</color>
+    <color name="lightGreen">#D4F9D2</color>
+    <color name="recovery_indicator_green">#36C12C</color>
+    <color name="tested_indicator_violet_light">#DDD8EF</color>
+    <color name="tested_indicator_violet">#31249C</color>
+    <color name="lightOrange">#FFEDE3</color>
+    <color name="death_circle_background">#393939</color>
+    <color name="orange">#FF8748</color>
+
+
+</resources>

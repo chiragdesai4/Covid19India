@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval" >
+    <solid android:color="@android:color/transparent"/>
+    <stroke android:color="@color/death_circle_background" android:width="4dp"/>
+    <size android:height="@dimen/_24sdp"
+        android:width="@dimen/_24sdp"/>
+</shape>

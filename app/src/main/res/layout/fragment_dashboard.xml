@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_100">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvLatestUpdate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_14sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:gravity="center"
+                        android:textColor="#303030"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Latest update April 15" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvConfirmedCases"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLatestUpdate"
+                        app:layout_constraintStart_toStartOf="@+id/tvLatestUpdate"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLatestUpdate">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivInfectedSign"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:src="@drawable/ic_vector_infected_sign_circle"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/tvConfirmedDeltaCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/_12ssp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivInfectedSign"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/ivInfectedSign"
+                                app:layout_constraintTop_toTopOf="@+id/ivInfectedSign"
+                                tools:text="[+1234]" />
+
+                            <TextView
+                                android:id="@+id/tvConfirmedCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/_22sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivInfectedSign"
+                                tools:text="123455434" />
+
+                            <TextView
+                                android:id="@+id/tvInfectedText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text="@string/string_confirmed"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tvConfirmedCount"
+                                app:layout_constraintStart_toStartOf="@+id/tvConfirmedCount"
+                                app:layout_constraintTop_toBottomOf="@+id/tvConfirmedCount" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvActiveCases"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/cvDeathCases"
+                        app:layout_constraintEnd_toStartOf="@+id/cvRecoveredCases"
+                        app:layout_constraintStart_toStartOf="@+id/cvConfirmedCases"
+                        app:layout_constraintTop_toBottomOf="@+id/cvConfirmedCases">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivActiveSign"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:src="@drawable/ic_vector_active_sign_circle"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/tvActiveDeltaCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/blue_600"
+                                android:textSize="@dimen/_10ssp"
+                                android:visibility="invisible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/ivActiveSign"
+                                app:layout_constraintTop_toTopOf="@+id/ivActiveSign"
+                                tools:text="[+1234]" />
+
+                            <TextView
+                                android:id="@+id/tvActiveCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/blue_600"
+                                android:textSize="@dimen/_22sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivActiveSign"
+                                tools:text="123455434" />
+
+                            <TextView
+                                android:id="@+id/tvActiveText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text="@string/string_active"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tvActiveCount"
+                                app:layout_constraintStart_toStartOf="@+id/tvActiveCount"
+                                app:layout_constraintTop_toBottomOf="@+id/tvActiveCount" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvRecoveredCases"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvActiveCases"
+                        app:layout_constraintEnd_toEndOf="@+id/cvConfirmedCases"
+                        app:layout_constraintStart_toEndOf="@+id/cvActiveCases"
+                        app:layout_constraintTop_toTopOf="@+id/cvActiveCases">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivRecovrySign"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:src="@drawable/ic_vector_recovery_sign_circle"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/tvRecoveryDeltaCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/recovery_indicator_green"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivRecovrySign"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/ivRecovrySign"
+                                app:layout_constraintTop_toTopOf="@+id/ivRecovrySign"
+                                tools:text="[+1234]" />
+
+                            <TextView
+                                android:id="@+id/tvRecoveryCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/recovery_indicator_green"
+                                android:textSize="@dimen/_22sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivRecovrySign"
+                                tools:text="123455434" />
+
+                            <TextView
+                                android:id="@+id/tvRecoveryText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text="@string/string_recovered"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tvRecoveryCount"
+                                app:layout_constraintStart_toStartOf="@+id/tvRecoveryCount"
+                                app:layout_constraintTop_toBottomOf="@+id/tvRecoveryCount" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvDeathCases"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/cvActiveCases"
+                        app:layout_constraintStart_toStartOf="@+id/cvActiveCases"
+                        app:layout_constraintTop_toBottomOf="@+id/cvActiveCases">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivDeathSign"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:src="@drawable/ic_vector_death_sign_circle"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/tvDeathDeltaCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/death_circle_background"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivDeathSign"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/ivDeathSign"
+                                app:layout_constraintTop_toTopOf="@+id/ivDeathSign"
+                                tools:text="[+1234]" />
+
+                            <TextView
+                                android:id="@+id/tvDeathCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/death_circle_background"
+                                android:textSize="@dimen/_22sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivDeathSign"
+                                tools:text="123455434" />
+
+                            <TextView
+                                android:id="@+id/tvDeathText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text="@string/string_deaths"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tvDeathCount"
+                                app:layout_constraintStart_toStartOf="@+id/tvDeathCount"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDeathCount" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvTestedCases"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvDeathCases"
+                        app:layout_constraintEnd_toEndOf="@+id/cvRecoveredCases"
+                        app:layout_constraintStart_toStartOf="@+id/cvRecoveredCases"
+                        app:layout_constraintTop_toTopOf="@+id/cvDeathCases"
+                        app:layout_constraintVertical_bias="0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivTestedSign"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:src="@drawable/ic_vector_tested_sign_circle"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/tvTestedCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/_22sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivTestedSign"
+                                tools:text="123455434" />
+
+                            <TextView
+                                android:id="@+id/tvTestedText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text="@string/string_tested"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tvTestedCount"
+                                app:layout_constraintStart_toStartOf="@+id/tvTestedCount"
+                                app:layout_constraintTop_toBottomOf="@+id/tvTestedCount" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/tvUpdatesStatic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/nunito_semi_bold"
+                        android:text="@string/sting_updates"
+                        android:textColor="#303030"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLatestUpdate"
+                        app:layout_constraintStart_toStartOf="@+id/tvLatestUpdate"
+                        app:layout_constraintTop_toBottomOf="@+id/cvTestedCases" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDailyUpdates"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toTopOf="@+id/tvViewAllUpdates"
+                        app:layout_constraintEnd_toEndOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintStart_toStartOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintVertical_bias="0"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/x_item_update_data" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewAllUpdates"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/textview_white_background"
+                        android:clickable="true"
+                        android:elevation="@dimen/_4sdp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/nunito_regular"
+                        android:gravity="center"
+                        android:text="@string/view_all_updates"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintStart_toStartOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintTop_toBottomOf="@+id/rvDailyUpdates"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <TextView
+                        android:id="@+id/tvNoUpdates"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:gravity="center"
+                        android:text="@string/no_updates_for_today"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintStart_toStartOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUpdatesStatic"
+                        app:layout_constraintVertical_bias="0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

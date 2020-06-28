@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_100">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvOverviewStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/overview"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvOverviewContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/overview_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvOverviewStatic"
+                    app:layout_constraintStart_toStartOf="@+id/tvOverviewStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOverviewStatic" />
+
+                <TextView
+                    android:id="@+id/tvSymptomsStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/string_symptomps"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvOverviewContent"
+                    app:layout_constraintStart_toStartOf="@+id/tvOverviewContent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOverviewContent" />
+
+                <ImageView
+                    android:id="@+id/ivHeadache"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_vector_headache"
+                    app:layout_constraintBottom_toTopOf="@+id/tvSymptomsContent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCough"
+                    app:layout_constraintStart_toStartOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSymptomsStatic"
+                    tools:ignore="ContentDescription" />
+
+
+                <ImageView
+                    android:id="@+id/ivCough"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_vector_cough"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivHeadache"
+                    app:layout_constraintEnd_toStartOf="@+id/ivFever"
+                    app:layout_constraintStart_toEndOf="@+id/ivHeadache"
+                    app:layout_constraintTop_toTopOf="@+id/ivHeadache"
+                    tools:ignore="ContentDescription" />
+
+
+                <ImageView
+                    android:id="@+id/ivFever"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_vector_fever"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivHeadache"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintStart_toEndOf="@+id/ivCough"
+                    app:layout_constraintTop_toTopOf="@+id/ivHeadache"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvSymptomsContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/string_symptoms_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvOverviewContent"
+                    app:layout_constraintStart_toStartOf="@+id/tvOverviewContent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivHeadache" />
+
+
+                <TextView
+                    android:id="@+id/tvPreventionStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/string_prevention"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintStart_toStartOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSymptomsContent" />
+
+                <ImageView
+                    android:id="@+id/ivWearMask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:padding="@dimen/_14sdp"
+                    android:src="@drawable/ic_wear_mask"
+                    app:layout_constraintEnd_toStartOf="@+id/ivWashHands"
+                    app:layout_constraintStart_toStartOf="@+id/tvPreventionStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPreventionStatic"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/ivWashHands"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_14sdp"
+                    android:src="@drawable/ic_wash_hands"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivWearMask"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCookFood"
+                    app:layout_constraintStart_toEndOf="@+id/ivWearMask"
+                    app:layout_constraintTop_toTopOf="@+id/ivWearMask"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/ivCookFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_14sdp"
+                    android:src="@drawable/ic_cook_food"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivWashHands"
+                    app:layout_constraintEnd_toEndOf="@+id/tvPreventionStatic"
+                    app:layout_constraintStart_toEndOf="@+id/ivWashHands"
+                    app:layout_constraintTop_toTopOf="@+id/ivWashHands"
+                    tools:ignore="ContentDescription" />
+
+
+                <ImageView
+                    android:id="@+id/ivAvoidTouch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:padding="@dimen/_14sdp"
+                    android:src="@drawable/ic_avoid_contact"
+                    app:layout_constraintEnd_toEndOf="@+id/ivWearMask"
+                    app:layout_constraintStart_toStartOf="@+id/ivWearMask"
+                    app:layout_constraintTop_toBottomOf="@+id/ivWearMask"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/ivAvoidFaceTouch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_14sdp"
+                    android:src="@drawable/ic_wash_hands"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivAvoidTouch"
+                    app:layout_constraintEnd_toEndOf="@+id/ivWashHands"
+                    app:layout_constraintStart_toStartOf="@+id/ivWashHands"
+                    app:layout_constraintTop_toTopOf="@+id/ivAvoidTouch"
+                    tools:ignore="ContentDescription" />
+
+
+                <ImageView
+                    android:id="@+id/ivAvoidTravel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_14sdp"
+                    android:src="@drawable/ic_avoid_travel"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivAvoidFaceTouch"
+                    app:layout_constraintEnd_toEndOf="@+id/ivCookFood"
+                    app:layout_constraintStart_toStartOf="@+id/ivCookFood"
+                    app:layout_constraintTop_toTopOf="@+id/ivAvoidFaceTouch"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvDataProviderStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/data_provider"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintStart_toStartOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/ivAvoidTravel" />
+
+                <TextView
+                    android:id="@+id/tvDataProviderContentOne"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/data_provider_content_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDataProviderStatic"
+                    app:layout_constraintStart_toStartOf="@+id/tvDataProviderStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDataProviderStatic" />
+
+
+                <TextView
+                    android:id="@+id/tvSafetyMeasuresStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/safety_measures"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintStart_toStartOf="@+id/tvSymptomsStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDataProviderContentOne" />
+
+                <TextView
+                    android:id="@+id/tvSafetyMeasuresContentOne"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/safety_measures_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSafetyMeasuresStatic"
+                    app:layout_constraintStart_toStartOf="@+id/tvSafetyMeasuresStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSafetyMeasuresStatic" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
