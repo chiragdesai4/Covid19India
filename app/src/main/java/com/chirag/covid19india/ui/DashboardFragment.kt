@@ -123,39 +123,39 @@ class DashboardFragment : BaseFragment(), View.OnClickListener {
                                             object : TypeToken<TestedData?>() {}.type)
 
                                     //Confirmed Cases
-                                    if (statewiseData.confirmed.isNotEmpty()) mBinding.tvConfirmedCount.text = Utils.getFormattedNumber(statewiseData.confirmed.toDouble(), false) else mBinding.tvConfirmedCount.setText(R.string.no_counts_found)
-                                    if (statewiseData.deltaconfirmed.isNotEmpty()) mBinding.tvConfirmedDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltaconfirmed.toDouble(), false)) else mBinding.tvConfirmedDeltaCount.setText(R.string.no_counts_found)
+                                    if (statewiseData.confirmed.isNotEmpty()) mBinding.tvConfirmedCount.text = Utils.getFormattedNumber(statewiseData.confirmed.toDouble()) else mBinding.tvConfirmedCount.setText(R.string.no_counts_found)
+                                    if (statewiseData.deltaconfirmed.isNotEmpty()) mBinding.tvConfirmedDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltaconfirmed.toDouble())) else mBinding.tvConfirmedDeltaCount.setText(R.string.no_counts_found)
 
                                     //Active Cases
-                                    if (statewiseData.active.isNotEmpty()) mBinding.tvActiveCount.text = Utils.getFormattedNumber(statewiseData.active.toDouble(), false) else {
+                                    if (statewiseData.active.isNotEmpty()) mBinding.tvActiveCount.text = Utils.getFormattedNumber(statewiseData.active.toDouble()) else {
                                         mBinding.tvActiveCount.setText(R.string.no_counts_found)
                                         mBinding.tvActiveCount.textSize = 20.0f
                                     }
 
                                     //Death Cases
-                                    if (statewiseData.deaths.isNotEmpty()) mBinding.tvDeathCount.text = Utils.getFormattedNumber(statewiseData.deaths.toDouble(), false) else {
+                                    if (statewiseData.deaths.isNotEmpty()) mBinding.tvDeathCount.text = Utils.getFormattedNumber(statewiseData.deaths.toDouble()) else {
                                         mBinding.tvDeathCount.setText(R.string.no_counts_found)
                                         mBinding.tvDeathCount.textSize = 20.0f
                                     }
-                                    if (statewiseData.deltadeaths.isNotEmpty()) mBinding.tvDeathDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltadeaths.toDouble(), false)) else {
+                                    if (statewiseData.deltadeaths.isNotEmpty()) mBinding.tvDeathDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltadeaths.toDouble())) else {
                                         mBinding.tvDeathDeltaCount.setText(R.string.no_counts_found)
                                         mBinding.tvDeathDeltaCount.textSize = 20.0f
                                     }
 
                                     //Recovered Cases
-                                    if (statewiseData.recovered.isNotEmpty()) mBinding.tvRecoveryCount.text = Utils.getFormattedNumber(statewiseData.recovered.toDouble(), false) else {
+                                    if (statewiseData.recovered.isNotEmpty()) mBinding.tvRecoveryCount.text = Utils.getFormattedNumber(statewiseData.recovered.toDouble()) else {
                                         mBinding.tvRecoveryCount.setText(R.string.no_counts_found)
                                         mBinding.tvRecoveryCount.textSize = 20.0f
                                     }
-                                    if (statewiseData.deltarecovered.isNotEmpty()) mBinding.tvRecoveryDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltarecovered.toDouble(), false)) else {
+                                    if (statewiseData.deltarecovered.isNotEmpty()) mBinding.tvRecoveryDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltarecovered.toDouble())) else {
                                         mBinding.tvRecoveryDeltaCount.setText(R.string.no_counts_found)
                                         mBinding.tvRecoveryDeltaCount.textSize = 20.0f
                                     }
 
                                     //Tested Cases
                                     when {
-                                        testedData.totalindividualstested.isNotEmpty() -> mBinding.tvTestedCount.text = Utils.getFormattedNumber(testedData.totalindividualstested.toDouble(), false)
-                                        testedData.totalsamplestested.isNotEmpty() -> mBinding.tvTestedCount.text = Utils.getFormattedNumber(testedData.totalsamplestested.toDouble(), false)
+                                        testedData.totalindividualstested.isNotEmpty() -> mBinding.tvTestedCount.text = Utils.getFormattedNumber(testedData.totalindividualstested.toDouble())
+                                        testedData.totalsamplestested.isNotEmpty() -> mBinding.tvTestedCount.text = Utils.getFormattedNumber(testedData.totalsamplestested.toDouble())
                                         else -> {
                                             mBinding.tvTestedCount.setText(R.string.no_counts_found)
                                             mBinding.tvTestedCount.textSize = 20.0f

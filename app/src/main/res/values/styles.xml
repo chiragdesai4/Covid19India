@@ -48,31 +48,4 @@
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
-
-    <!-- TextView Title  Style-->
-
-    <!--CardView Style -->
-
-    <!-- EditText Style -->
-
-    <!-- TextView Sub Title style -->
-
-    <!-- View Style -->
-
-    <!-- Small Text -->
-
-    <!-- Error Style -->
-
-    <!-- TextView inside CardView Style -->
-
-    <!--custom title style -->
-
-    <!--CardView Style -->
-
-
-    <!-- Custom Card Button -->
-    <!-- Card Button TextView -->
-
-    <!-- Button Style -->
-
 </resources>

@@ -2,22 +2,18 @@ package com.chirag.covid19india.ui.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.snackbar.Snackbar;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BaseFragment extends Fragment {
 
     public Context mContext;
     public Activity mActivity;
-
-    public TextView title;
-    private Snackbar snackbar;
 
     private ProgressDialog dialog;
 
@@ -26,7 +22,7 @@ public class BaseFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NotNull Context context) {
         super.onAttach(context);
         mContext = context;
         mActivity = getActivity();
@@ -59,6 +55,5 @@ public class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (snackbar != null && snackbar.isShown()) snackbar.dismiss();
     }
 }

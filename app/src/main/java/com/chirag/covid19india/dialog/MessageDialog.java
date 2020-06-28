@@ -14,17 +14,12 @@ import com.chirag.covid19india.databinding.DialogMessageBinding;
 
 
 public class MessageDialog extends AlertDialog implements View.OnClickListener {
-    private boolean cancelable = true, onlyPositiveButton = false;
+    private boolean cancelable = true;
     private String title, message, positiveButtonText, negativeButtonText;
     private OnClickListener onPositiveButtonClick, onNegativeButtonClick;
 
     public MessageDialog(Context context) {
         super(context, R.style.DialogWithAnimation);
-    }
-
-    public MessageDialog(Context context, boolean onlyPositiveButton) {
-        super(context, R.style.DialogWithAnimation);
-        this.onlyPositiveButton = onlyPositiveButton;
     }
 
     public MessageDialog setTitle(String title) {
@@ -72,7 +67,7 @@ public class MessageDialog extends AlertDialog implements View.OnClickListener {
         if (negativeButtonText != null) mBinder.tvButtonNegative.setText(negativeButtonText);
 
         mBinder.tvButtonPositive.setVisibility(onPositiveButtonClick != null ? View.VISIBLE : View.GONE);
-        mBinder.tvButtonNegative.setVisibility(!onlyPositiveButton && onNegativeButtonClick != null ? View.VISIBLE : View.GONE);
+        mBinder.tvButtonNegative.setVisibility(onNegativeButtonClick != null ? View.VISIBLE : View.GONE);
 
         mBinder.tvButtonPositive.setOnClickListener(this);
         mBinder.tvButtonNegative.setOnClickListener(this);

@@ -7,6 +7,7 @@ import com.chirag.covid19india.ui.base.ProgressDialog;
 import com.chirag.covid19india.util.Logger;
 import com.chirag.covid19india.util.Utils;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,36 +42,43 @@ public abstract class JSONCallback implements Callback<ResponseBody> {
     }
 
     @Override
-    public void onResponse(Call call, Response response) {
+    public void onResponse(@NotNull Call call, Response response) {
         String body = null;
         try {//Converting string to JSONObject
             if (response.isSuccessful()) {
-                body = ((ResponseBody) response.body()).string();
-                if (body.startsWith("[")) {
-                    JSONArray array = new JSONArray(body);
-                    if (array.length() > 0) {
-                        onSuccess(response.code(), array);
-                    }
-                } else {
-                    JSONObject object = new JSONObject(body);
-                    Logger.e("Response", call.request().url().toString() + "\n" + object.toString());
-                    if (Objects.requireNonNull(object.optJSONArray("statewise")).length() > 0) {
-                        onSuccess(response.code(), object);
-                    }
-                    else{
-                        onFailure(response.code(), object);
+                if (response.body() != null) {
+                    body = ((ResponseBody) response.body()).string();
+                }
+                if (body != null) {
+                    if (body.startsWith("[")) {
+                        JSONArray array = new JSONArray(body);
+                        if (array.length() > 0) {
+                            onSuccess(response.code(), array);
+                        }
+                    } else {
+                        JSONObject object = new JSONObject(body);
+                        Logger.e("Response", call.request().url().toString() + "\n" + object.toString());
+                        if (Objects.requireNonNull(object.optJSONArray("statewise")).length() > 0) {
+                            onSuccess(response.code(), object);
+                        } else {
+                            onFailure(response.code(), object);
+                        }
                     }
                 }
             } else {
-                body = response.errorBody().string();
-                if (body.isEmpty()) {
-                    String message = response.raw().message();
-                    Logger.e("Response", call.request().url().toString() + "\n" + message);
-                    onFailed(response.code(), message);
-                } else {
-                    JSONObject object = new JSONObject(body);
-                    Logger.e("Response", call.request().url().toString() + "\n" + object.toString());
-                    onFailure(response.code(), object);
+                if (response.errorBody() != null) {
+                    body = response.errorBody().string();
+                }
+                if (body != null) {
+                    if (body.isEmpty()) {
+                        String message = response.raw().message();
+                        Logger.e("Response", call.request().url().toString() + "\n" + message);
+                        onFailed(response.code(), message);
+                    } else {
+                        JSONObject object = new JSONObject(body);
+                        Logger.e("Response", call.request().url().toString() + "\n" + object.toString());
+                        onFailure(response.code(), object);
+                    }
                 }
             }
         } catch (JSONException | IOException e) {

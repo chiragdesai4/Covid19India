@@ -28,8 +28,6 @@
     <string name="string_states">States</string>
     <string name="string_about">About</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-
     <!-- State List -->
     <string name="string_tested_short">Tested</string>
     <string name="string_search_state">Search state by name</string>

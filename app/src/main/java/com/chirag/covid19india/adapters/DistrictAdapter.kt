@@ -24,8 +24,8 @@ class DistrictAdapter(private val context: Context, private val districtDataList
         holder.mBinder.tvDistrictName.text = districtData.district
 
         //Confirmed Cases
-        holder.mBinder.tvConfirmedCount.text = Utils.getFormattedNumber(districtData.confirmed.toString().toDouble(), false)
-        holder.mBinder.tvConfirmedDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(districtData.delta.confirmed.toString().toDouble(), false))
+        holder.mBinder.tvConfirmedCount.text = Utils.getFormattedNumber(districtData.confirmed.toString().toDouble())
+        holder.mBinder.tvConfirmedDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(districtData.delta.confirmed.toString().toDouble()))
     }
 
     override fun getItemCount(): Int {

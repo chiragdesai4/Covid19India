@@ -14,10 +14,6 @@ import com.chirag.covid19india.databinding.DialogProgressBinding;
 public class ProgressDialog extends AlertDialog {
     private String message;
 
-    public ProgressDialog(Context context) {
-        this(context, null);
-    }
-
     public ProgressDialog(Context context, String message) {
         super(context, R.style.ProgressDialog);
         this.message = message;
