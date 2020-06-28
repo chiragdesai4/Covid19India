@@ -50,13 +50,5 @@
     <string name="sting_updates">Updates</string>
     <string name="no_updates_for_today">No updates for today yet.</string>
     <string name="view_all_updates">View All</string>
-    <string name="string_andhra_pradesh">Andhra Pradesh</string>
-    <string name="string_arunachal_pradesh">Arunachal Pradesh</string>
-    <string name="string_assam">Assam</string>
-    <string name="string_bihar">Bihar</string>
-    <string name="string_andaman">Andaman</string>
-    <string name="string_delhi">Delhi</string>
-    <string name="string_chhattisgarh">Chhattisgarh</string>
-    <string name="string_diu_daman">Diu Daman</string>
 
 </resources>
