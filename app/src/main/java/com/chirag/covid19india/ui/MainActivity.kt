@@ -45,12 +45,6 @@ class MainActivity : BaseActivity(), OnRecyclerViewItemClicked {
         mBinding.navigation.selectedItemId = R.id.navigation_dashboard
     }
 
-    /* fun updateTab(tabNameConstant: String?, tabId: Int) {
-         mCurrentTab = tabNameConstant
-         mBinding.navigation.selectedItemId = tabId
-         selectedTab(mCurrentTab)
-     }*/
-
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
         when (item.itemId) {
             R.id.navigation_dashboard -> {
@@ -102,7 +96,6 @@ class MainActivity : BaseActivity(), OnRecyclerViewItemClicked {
         ft.commit()
     }
 
-    var doubleBackToExitPressedOnce = false
     override fun onBackPressed() {
         try {
             if (!(mStacks!![mCurrentTab]!!.lastElement() as BaseFragment).onBackPressed()) {
@@ -115,15 +108,6 @@ class MainActivity : BaseActivity(), OnRecyclerViewItemClicked {
                     } else {
                         try {
                             if (supportFragmentManager.backStackEntryCount <= 1) {
-                                /*if (doubleBackToExitPressedOnce) {
-                                    super.onBackPressed();
-                                    return;
-                                }
-
-                                this.doubleBackToExitPressedOnce = true;
-                                Toast.makeText(this, "Please click 'BACK' again to exit", Toast.LENGTH_SHORT).show();
-
-                                new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);*/
                                 showLogoutPopup()
                             } else {
                                 supportFragmentManager.popBackStack()

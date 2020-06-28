@@ -27,19 +27,19 @@ class StatewiseAdapter(private val context: Context, private var dataArrayList: 
         holder.mBinder.tvStateName.text = statewiseData.state
 
         //Confirmed Cases
-        holder.mBinder.tvConfirmedCount.text = Utils.getFormattedNumber(statewiseData.confirmed.toDouble())
-        holder.mBinder.tvConfirmedDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltaconfirmed.toDouble()))
+        holder.mBinder.tvConfirmedCount.text = Utils.getFormattedNumber(statewiseData.confirmed!!.toDouble())
+        holder.mBinder.tvConfirmedDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltaconfirmed!!.toDouble()))
 
         //Active Cases
-        holder.mBinder.tvActiveCount.text = Utils.getFormattedNumber(statewiseData.active.toDouble())
+        holder.mBinder.tvActiveCount.text = Utils.getFormattedNumber(statewiseData.active!!.toDouble())
 
         //Death Cases
-        holder.mBinder.tvDeathCount.text = Utils.getFormattedNumber(statewiseData.deaths.toDouble())
-        holder.mBinder.tvDeathDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltadeaths.toDouble()))
+        holder.mBinder.tvDeathCount.text = Utils.getFormattedNumber(statewiseData.deaths!!.toDouble())
+        holder.mBinder.tvDeathDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltadeaths!!.toDouble()))
 
         //Recovered Cases
-        holder.mBinder.tvRecoveredCount.text = Utils.getFormattedNumber(statewiseData.recovered.toDouble())
-        holder.mBinder.tvRecoveredDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltarecovered.toDouble()))
+        holder.mBinder.tvRecoveredCount.text = Utils.getFormattedNumber(statewiseData.recovered!!.toDouble())
+        holder.mBinder.tvRecoveredDeltaCount.text = String.format("[+%s]", Utils.getFormattedNumber(statewiseData.deltarecovered!!.toDouble()))
 
         //Tested Cases
         holder.mBinder.cvStateCases.setOnClickListener {

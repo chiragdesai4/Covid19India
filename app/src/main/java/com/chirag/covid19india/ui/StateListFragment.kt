@@ -143,7 +143,7 @@ class StateListFragment : BaseFragment() {
         //looping through existing elements
         for (s in statewiseDataList!!) {
             //if the existing elements contains the search input
-            if (s.state.toLowerCase(Locale.getDefault()).contains(text.toLowerCase(Locale.getDefault())) ||
+            if (s.state!!.toLowerCase(Locale.getDefault()).contains(text.toLowerCase(Locale.getDefault())) ||
                     s.state.toLowerCase(Locale.getDefault()).contains(text.toLowerCase(Locale.getDefault()))) {
                 //adding the element to filtered list
                 filteredNames.add(s)
